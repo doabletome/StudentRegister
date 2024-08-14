@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="output.css" />
+    <link rel="icon" href="./student.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="h-screen font-nunito bg-custom-pink">
+    <header
+      class="bg-custom-dark p-4 text-white flex justify-around items-center px-8 fixed top-0 w-full z-20"
+    >
+      <div class="logo flex items-center justify-center gap-2">
+        <img src="./logo.png" alt="Logo" class="h-14 w-auto rounded-full" />
+        <h1 class="font-bold text-pretty text-3xl text-custom-blue">
+          Students Register
+          <sub class="sm:hidden lg:block text-sm font-thin">
+            Register students seamlessly and manage their details
+            efficiently.</sub
+          >
+        </h1>
+      </div>
+      <nav class="sm:hidden lg:block">
+        <div class="icons flex space-x-20 font-semibold">
+          <a href="#top" class="hover:text-gray-200 text-custom-blue transition"
+            >Homepage</a
+          >
+          <a
+            href="#allStudents"
+            class="hover:text-gray-200 text-custom-blue transition"
+            >All Students</a
+          >
+
+          <a
+            href="#info"
+            class="hover:text-gray-200 text-custom-blue transition"
+            >Info</a
+          >
+        </div>
+      </nav>
+
+      <div id="hamburger" class="space-y-1 lg:hidden cursor-pointer z-20">
+        <div class="w-6 h-0.5 bg-black"></div>
+        <div class="w-6 h-0.5 bg-black"></div>
+        <div class="w-6 h-0.5 bg-black"></div>
+      </div>
+      <ul
+        id="menu"
+        class="hidden bg-indigo-700 absolute top-0 left-0 w-full p-10 rounded-b-3xl space-y-10 text-white text-center"
+      >
+        <li>
+          <a class="hlink" href="#top">Homepage</a>
+        </li>
+
+        <li>
+          <a class="hlink" href="#allStudents">All Students</a>
+        </li>
+        <li>
+          <a class="hlink" href="#info">Info</a>
+        </li>
+      </ul>
+    </header>
+
+    <main class="grid gap-14 justify-center mt-20">
+      <section
+        class="w-1/2 mx-auto my-5 p-6 shadow-lg mt-20 rounded-lg bg-gradient-to-t from-custom-dark form-section"
+      >
+        <h2 class="text-2xl font-bold mb-6 text-center text-custom-dark">
+          Student Registration Form
+        </h2>
+        <form class="p-6 grid register" name="form1" action="./action">
+          <!-- Student Name -->
+          <div class="mb-4">
+            <label
+              for="studentName"
+              class="block text-md font-medium text-custom-blue mb-2"
+              >Student Name</label
+            >
+            <input
+              type="text"
+              id="studentName"
+              name="studentName"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter student name"
+              required
+            />
+          </div>
+
+          <!-- Student ID -->
+          <div class="mb-4">
+            <label
+              for="studentID"
+              class="block text-md font-medium text-custom-blue mb-2"
+              >Student ID</label
+            >
+            <input
+              type="number"
+              id="studentID"
+              name="studentID"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter student ID"
+            />
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <!-- Email ID -->
+            <div class="mb-4">
+              <label
+                for="emailID"
+                class="block text-md font-medium text-custom-blue mb-2"
+                >Email ID</label
+              >
+              <input
+                type="email"
+                id="emailID"
+                name="emailID"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter email ID"
+              />
+            </div>
+
+            <!-- Contact Number -->
+            <div class="mb-4">
+              <label
+                for="contactNumber"
+                class="block text-md font-medium text-custom-blue mb-2"
+                >Contact Number</label
+              >
+              <input
+                type="number"
+                id="contactNumber"
+                name="contactNumber"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter contact number"
+              />
+            </div>
+          </div>
+
+          <!-- Country -->
+          <div class="mb-4">
+            <label
+              for="country"
+              class="block text-md font-medium text-custom-blue mb-2"
+              >Country</label
+            >
+            <select
+              id="country"
+              name="country"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option>Select country</option>
+              <option>India</option>
+              <option>United States</option>
+              <option>United Kingdom</option>
+              <option>Canada</option>
+              <!-- Add more countries as needed -->
+            </select>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="text-center">
+            <button
+              onclick="allLetter(document.form1.studentName)"
+              type="submit"
+              class="w-fit px-4 bg-custom-dark text-custom-blue p-3 text-2xl rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-xl"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <div class="h-1 w-1/2 bg-slate-400 mx-auto"></div>
+
+      <section id="allStudents" style="height: 500px" class="relative">
+        <div
+          id="editFormContainer"
+          style="display: none"
+          class="absolute left-1/3 w-1/3 bg-white p-10 shadow-xl"
+        >
+          <h2 class="text-xl font-bold mb-4 text-center">Edit Student</h2>
+          <form
+            id="editStudentForm"
+            class="max-w-lg mx-auto p-8shadow-md rounded-lg"
+          >
+            <input type="hidden" id="editStudentIndex" />
+
+            <div class="mb-4">
+              <label
+                for="editStudentName"
+                class="block text-gray-700 font-bold mb-2"
+                >Name:</label
+              >
+              <input
+                type="text"
+                id="editStudentName"
+                class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+
+            <div class="mb-4">
+              <label
+                for="editStudentID"
+                class="block text-gray-700 font-bold mb-2"
+                >Student ID:</label
+              >
+              <input
+                type="number"
+                id="editStudentID"
+                class="w-full px-3 py-2 border rounded-lg bg-gray-200"
+              />
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div class="mb-4">
+                <label
+                  for="editEmailID"
+                  class="block text-gray-700 font-bold mb-2"
+                  >Email ID:</label
+                >
+                <input
+                  type="email"
+                  id="editEmailID"
+                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label
+                  for="editContactNumber"
+                  class="block text-gray-700 font-bold mb-2"
+                  >Contact Number:</label
+                >
+                <input
+                  type="number"
+                  id="editContactNumber"
+                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                />
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label
+                for="editCountry"
+                class="block text-gray-700 font-bold mb-2"
+                >Country:</label
+              >
+              <input
+                type="text"
+                id="editCountry"
+                class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+
+            <div class="grid grid-cols-2 gap-6">
+              <button
+                type="submit"
+                class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              >
+                Save Changes
+              </button>
+              <button
+                id="cancel"
+                class="w-full bg-red-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <h2 class="text-2xl font-bold text-center mb-4 text-custom-dark">
+          Registered Students
+        </h2>
+        <div
+          class="max-h-64 overflow-y-auto m-10 shadow-xl bg-white rounded-xl"
+        >
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead>
+              <tr>
+                <th class="border px-4 py-2 text-lg text-custom-blue">#</th>
+                <th class="border px-4 py-2 text-lg text-custom-blue">
+                  Student Name
+                </th>
+                <th class="border px-4 py-2 text-lg text-custom-blue">
+                  Student ID
+                </th>
+                <th class="border px-4 py-2 text-lg text-custom-blue">
+                  Email ID
+                </th>
+                <th class="border px-4 py-2 text-lg text-custom-blue">
+                  Contact Number
+                </th>
+                <th class="border px-4 py-2 text-lg text-custom-blue">
+                  Country
+                </th>
+                <th class="border px-4 py-2 text-custom-blue"></th>
+              </tr>
+            </thead>
+            <tbody id="studentsTableBody">
+              <!-- Rows will be generated here by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="h-1 w-1/2 bg-slate-400 mx-auto"></div>
+      <section
+        id="info"
+        class="h-72 flex mx-auto rounded-xl mt-8"
+        style="width: 60%"
+      >
+        <div class="shadow-xl bg-custom-dark flex mb-10 rounded-xl flex-wrap">
+          <div class="w-1/3 flex justify-end items-center">
+            <img src="./info.jpeg" alt="" class="rounded-lg shadow-xl" />
+          </div>
+          <div
+            class="w-full flex flex-col flex-wrap justify-center items-start ml-4"
+          >
+            <h1 class="font-bold text-2xl text-custom-blue">Information</h1>
+            <p class="w-3/4 shadow-xl p-3 text-white">
+              This application is a student management system designed to handle
+              the registration, editing, and management of student data. It
+              provides a user-friendly interface to view a list of registered
+              students.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="h-48 w-full bg-slate-700 flex flex-col gap-4 justify-center items-center"
+    >
+      <div class="text-lg text-black">
+        @copywrite student registration page, 2024
+      </div>
+      <div class="text-lg text-black">
+        Created by <span class="text-2xl text-custom-pink">Himanshu Patle</span>
+      </div>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
